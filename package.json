@@ -1,0 +1,26 @@
+{
+  "name": "ember-cli-inject-meta",
+  "version": "0.0.0",
+  "description": "Inject meta tags into an ember application to use as modules",
+  "author": "Offir Golan <offirgolan@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "ember",
+    "inject",
+    "meta",
+    "server"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/offirgolan/ember-cli-inject-meta.git"
+  },
+  "main": "./index.js",
+  "files": [
+    "index.js",
+    "lib"
+  ],
+  "dependencies": {
+    "cheerio": "^0.20.0",
+    "tamper": "^0.1.0"
+  }
+}
