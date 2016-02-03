@@ -5,7 +5,7 @@
 [![Code Climate](https://codeclimate.com/github/offirgolan/ember-cli-inject-meta/badges/gpa.svg)](https://codeclimate.com/github/offirgolan/ember-cli-inject-meta)
 [![Test Coverage](https://codeclimate.com/github/offirgolan/ember-cli-inject-meta/badges/coverage.svg)](https://codeclimate.com/github/offirgolan/ember-cli-inject-meta/coverage)
 
-Inject meta tags into your index.html and loads them as modules.
+Inject content into a meta tag which is defined as a module on runtime. This allows you to do operations such as read a cookie to set user data, make async calls to server to get permissions, get/set feature flags, so on and so forth all before your application loads.
 
 ## Setup
 
@@ -20,11 +20,17 @@ app.use(injectMeta(function(req, res, inject) {
     inject({
         path: 'config/user',
         content: {
-            username: 'offirgolan'
+            username: 'offirgolan',
             isAdmin: true
         }
     })
 }))
+```
+
+This will add the following meta tag in your `index.html`
+
+```html
+<meta name="app/config/user" data-module="true" content="%7B%22username%22%3A%22offirgolan%22%2C%22isAdmin%22%3Atrue%7D">
 ```
 
 ```js
