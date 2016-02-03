@@ -3,9 +3,13 @@
   "version": "0.0.0",
   "description": "Inject meta tags into an ember application to use as modules",
   "author": "Offir Golan <offirgolan@gmail.com>",
+  "homepage": "https://github.com/offirgolan/ember-cli-inject-meta",
   "license": "MIT",
+  "engines": {
+    "node": ">= 0.10.0"
+  },
   "keywords": [
-    "ember",
+    "ember-addon",
     "inject",
     "meta",
     "server"
@@ -21,6 +25,7 @@
   ],
   "dependencies": {
     "cheerio": "^0.20.0",
-    "tamper": "^0.1.0"
+    "hijackresponse": "^1.0.2",
+    "rsvp": "^3.1.0"
   }
 }
