@@ -5,6 +5,9 @@
   "author": "Offir Golan <offirgolan@gmail.com>",
   "homepage": "https://github.com/offirgolan/ember-cli-inject-meta",
   "license": "MIT",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha"
+  },
   "engines": {
     "node": ">= 0.10.0"
   },
@@ -12,7 +15,7 @@
     "ember-addon",
     "inject",
     "meta",
-    "server"
+    "middleware"
   ],
   "repository": {
     "type": "git",
@@ -23,6 +26,11 @@
     "index.js",
     "lib"
   ],
+  "devDependencies": {
+    "express": "^4.13.4",
+    "mocha": "^2.4.5",
+    "supertest": "^1.1.0"
+  },
   "dependencies": {
     "cheerio": "^0.20.0",
     "hijackresponse": "^1.0.2",
