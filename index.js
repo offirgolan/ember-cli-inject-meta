@@ -1,5 +1,5 @@
 /**
- * Export cheerio (with )
+ * Export inject-meta (with )
  */
 
 exports = module.exports = require('./lib/inject-meta');
