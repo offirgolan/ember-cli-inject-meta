@@ -1,5 +1,10 @@
 # Ember CLI Inject Meta
 
+[![Build Status](https://travis-ci.org/offirgolan/ember-cli-inject-meta.svg?branch=master)](https://travis-ci.org/offirgolan/ember-cli-inject-meta)
+[![npm version](https://badge.fury.io/js/ember-cli-inject-meta.svg)](http://badge.fury.io/js/ember-cli-inject-meta)
+[![Code Climate](https://codeclimate.com/github/offirgolan/ember-cli-inject-meta/badges/gpa.svg)](https://codeclimate.com/github/offirgolan/ember-cli-inject-meta)
+[![Test Coverage](https://codeclimate.com/github/offirgolan/ember-cli-inject-meta/badges/coverage.svg)](https://codeclimate.com/github/offirgolan/ember-cli-inject-meta/coverage)
+
 Inject meta tags into your index.html and loads them as modules.
 
 ## Setup
