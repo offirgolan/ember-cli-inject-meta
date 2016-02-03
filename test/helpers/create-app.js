@@ -6,7 +6,7 @@ module.exports = function createApp(inject) {
   var app = express();
   app.use(injectMeta(inject));
   app.get('/', function(req, res) {
-      res.sendFile(path.join(__dirname + '/test-index.html'));
+      res.sendFile(path.join(__dirname, '/test-index.html'));
   });
   return app;
 };
