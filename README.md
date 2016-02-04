@@ -12,7 +12,7 @@ Inject content into a meta tag which is defined as a module on runtime. This all
 In this example, we will create our user config that will be located in `<APP_NAMESPACE>/config/user.js`. In your express server, you will have to define the middleware. 
 
 ```js
-// server/injex.js
+// server/index.js
 
 var injectMeta = require('ember-cli-inject-meta');
 
