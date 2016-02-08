@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-inject-meta",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Inject meta tags into an ember application to use as modules",
   "author": "Offir Golan <offirgolan@gmail.com>",
   "homepage": "https://github.com/offirgolan/ember-cli-inject-meta",
