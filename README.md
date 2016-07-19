@@ -9,21 +9,21 @@ Inject content into a meta tag which is defined as a module on runtime. This all
 
 ## Setup
 
-In this example, we will create our user config that will be located in `<APP_NAMESPACE>/config/user.js`. In your express server, you will have to define the middleware. 
+In this example, we will create our user config that will be located in `<APP_NAMESPACE>/config/user.js`. In your express server, you will have to define the middleware.
 
 ```js
 // server/index.js
 
 var injectMeta = require('ember-cli-inject-meta');
 
-app.use(injectMeta(function(req, res, inject) {
-    inject({
+app.use(injectMeta(function(req) {
+    return {
         path: 'config/user',
         content: {
             username: 'offirgolan',
             isAdmin: true
         }
-    })
+    };
 }))
 ```
 
@@ -60,25 +60,24 @@ The `injectMeta` function is passed a callback function that is given `req`, `re
 **Single Meta Tag**
 
 ```js
-injectMeta(function(req, res, inject) {
-    inject({
+injectMeta(function(req) {
+    return {
         path: 'config/user',
         content: { username: 'offirgolan' }
-    });
+    };
 });
 ```
 
 **Mutliple Meta Tags**
 
 ```js
-injectMeta(function(req, res, inject) {
-    inject([{
+injectMeta(function(req) {
+    return [{
         path: 'config/user',
         content: { username: 'offirgolan' }
     },{
         path: 'config/api',
         content: { endpoint: 'api/v2' }
-    }])
+    }]
 })
 ```
-
