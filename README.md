@@ -68,7 +68,7 @@ injectMeta(function(req) {
 });
 ```
 
-**Mutliple Meta Tags**
+**Multiple Meta Tags**
 
 ```js
 injectMeta(function(req) {
@@ -79,5 +79,27 @@ injectMeta(function(req) {
         path: 'config/api',
         content: { endpoint: 'api/v2' }
     }]
+})
+```
+
+**Multiple Meta Tags with Promises**
+
+```js
+injectMeta(function(req) {
+    var userConfig = getUserConfig(req).then(function(result) {
+        return {
+            path: 'config/user',
+            content: result
+        }
+    });
+
+    var apiConfig = getAPIConfig(req).then(function(result) {
+        return {
+            path: 'config/api',
+            content: result
+        }
+    });
+    
+    return [ userConfig, apiConfig ];
 })
 ```
