@@ -2,20 +2,25 @@ var request = require('supertest');
 var assert = require('assert');
 var cheerio = require('cheerio');
 var createApp = require('./helpers/create-app');
+var RSVP = require('rsvp');
 
 var metaTag = {
   path: 'config/user',
   content: { user: 'offir' }
 };
 
-describe('App with async injection', function(){
-  var app = createApp(function(req, res, inject) {
-    setTimeout(function() {
-      inject(metaTag);
-    }, 500);
+describe('App with async injection', function() {
+  var app = createApp(function(req) {
+    return [
+      new RSVP.Promise(function(resolve) {
+        setTimeout(function() {
+          resolve(metaTag);
+        }, 500);
+      })
+    ]
   });
 
-  it('responds with html', function(done){
+  it('responds with html', function(done) {
     request(app)
       .get('/')
       .set('Accept', 'text/html')
@@ -23,7 +28,7 @@ describe('App with async injection', function(){
       .expect(200, done);
   });
 
-  it('responds with new config in html', function(done){
+  it('responds with new config in html', function(done) {
     request(app)
       .get('/')
       .expect(function(res) {
@@ -34,7 +39,7 @@ describe('App with async injection', function(){
       .end(done);
   });
 
-  it('responds with module loader script', function(done){
+  it('responds with module loader script', function(done) {
       request(app)
         .get('/')
         .expect(function(res) {
@@ -44,7 +49,7 @@ describe('App with async injection', function(){
         .end(done);
     });
 
-  it('new config has escaped content', function(done){
+  it('new config has escaped content', function(done) {
       request(app)
         .get('/')
         .expect(function(res) {

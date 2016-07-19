@@ -9,8 +9,8 @@ var metaTag = {
 };
 
 describe('App with single injection', function(){
-  var app = createApp(function(req, res, inject) {
-    inject(metaTag);
+  var app = createApp(function(req) {
+    return metaTag;
   });
 
   it('responds with html', function(done){

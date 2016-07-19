@@ -4,8 +4,8 @@ var cheerio = require('cheerio');
 var createApp = require('./helpers/create-app');
 
 describe('App with no env config', function(){
-  var app = createApp(function(req, res, inject) {
-    inject();
+  var app = createApp(function(req) {
+    return;
   }, 'no-env-config');
 
   it('responds with html', function(done){

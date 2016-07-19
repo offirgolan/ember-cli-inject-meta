@@ -6,7 +6,8 @@
   "homepage": "https://github.com/offirgolan/ember-cli-inject-meta",
   "license": "MIT",
   "scripts": {
-    "test": "./node_modules/.bin/mocha",
+    "test": "mocha",
+    "test:debug": "mocha debug",
     "cover": "istanbul cover _mocha -- -R spec ./test/*-test.js"
   },
   "engines": {

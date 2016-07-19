@@ -3,12 +3,12 @@ var assert = require('assert');
 var cheerio = require('cheerio');
 var createApp = require('./helpers/create-app');
 
-describe('App with no injection', function(){
-  var app = createApp(function(req, res, inject) {
-    inject();
+describe('App with no injection', function() {
+  var app = createApp(function(req) {
+    return;
   });
 
-  it('responds with html', function(done){
+  it('responds with html', function(done) {
     request(app)
       .get('/')
       .set('Accept', 'text/html')
@@ -16,7 +16,7 @@ describe('App with no injection', function(){
       .expect(200, done);
   });
 
-  it('responds with unmodified html', function(done){
+  it('responds with unmodified html', function(done) {
     request(app)
       .get('/')
       .expect(function(res) {

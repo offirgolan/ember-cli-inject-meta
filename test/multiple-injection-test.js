@@ -12,8 +12,8 @@ var metaTags = [{
 }];
 
 describe('App with multiple injections', function(){
-  var app = createApp(function(req, res, inject) {
-    inject(metaTags);
+  var app = createApp(function(req) {
+    return metaTags;
   });
 
   it('responds with html', function(done){
