@@ -50,7 +50,7 @@ export default Ember.Route.extend({
 
 ## Possible Inputs
 
-The `injectMeta` function is passed a callback function that is given `req`, `res`, and `inject`. You must call `inject`, passing in either an array of objects, or a single object. Each meta module object should have:
+The `injectMeta` function is passed a callback function that is given `req`. You must return either an array of objects / promises, or a single object / promise. Each meta module object should have:
 
 - `path` (**String**): The path used to define your modules. (i.e `confg/user`)
 - `content` (**Object**): The content your module will contain. This will be stringified and escaped before injecting it into the meta tag.
